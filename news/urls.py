@@ -6,6 +6,7 @@ from .views import (
     ArticlesNewsListView,
     NewsSearchView,
     news_search,
+    subscriptions,
 
     UncosCreateView,
     UncosUpdateView,
@@ -25,7 +26,7 @@ urlpatterns = [
     path('news/', NewsSearchView.as_view(), name='news'),
     path('search/', news_search, name='news_search'),
     path('../accounts/signup/', SignUp.as_view(), name='signup'),
-
+    path('subscriptions/', subscriptions, name='subscriptions'),
     path('uncos/create/', UncosCreateView.as_view(), name='uncos_create'),
     path('uncos/<int:pk>/edit/', UncosUpdateView.as_view(), name='uncos_edit'),
     path('uncos/<int:pk>/delete/', UncosDeleteView.as_view(), name='uncos_delete'),

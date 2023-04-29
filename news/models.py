@@ -1,5 +1,7 @@
 from django.db import models
-from django.shortcuts import reverse
+from django.urls import reverse
+from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class New(models.Model):
@@ -15,3 +17,16 @@ class New(models.Model):
 
     def __str__(self):
         return '{}'.format(self.title)
+
+
+class Subscription(models.Model):
+    user = models.ForeignKey(
+        to=User,
+        on_delete=models.CASCADE,
+        related_name='subscriptions',
+    )
+    category = models.ForeignKey(
+        to='New',
+        on_delete=models.CASCADE,
+        related_name='subscriptions',
+    )
