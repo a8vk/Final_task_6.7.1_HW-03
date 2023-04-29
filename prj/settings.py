@@ -60,8 +60,30 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_FORMS = {"signup": "accounts.forms.CustomSignupForm"}
+
+# Настройки почты
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "diskvfoto@yandex.ru"
+EMAIL_HOST_PASSWORD = "meiujzqviyffgpxr"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+DEFAULT_FROM_EMAIL = "diskvfoto@yandex.ru"
+
+SERVER_EMAIL = "diskvfoto@yandex.ru"
+
+MANAGERS = (
+    ('manager', 'a8vk@yandex.ru'),
+)
+
+ADMINS = (
+    ('adm', 'a8vk@yandex.ru'),
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
