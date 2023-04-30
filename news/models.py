@@ -19,6 +19,13 @@ class New(models.Model):
         return '{}'.format(self.title)
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name.title()
+
+
 class Subscription(models.Model):
     user = models.ForeignKey(
         to=User,
@@ -26,7 +33,7 @@ class Subscription(models.Model):
         related_name='subscriptions',
     )
     category = models.ForeignKey(
-        to='New',
+        to='Category',
         on_delete=models.CASCADE,
         related_name='subscriptions',
     )

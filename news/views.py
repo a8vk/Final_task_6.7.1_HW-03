@@ -9,7 +9,7 @@ from .filters import NewFilter
 from django.contrib.auth.decorators import login_required
 from django.db.models import Exists, OuterRef
 from django.views.decorators.csrf import csrf_protect
-from .models import Subscription, New
+from .models import New, Subscription, Category
 
 
 class NewsListView(ListView):
