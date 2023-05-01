@@ -5,6 +5,7 @@ Subscriptions
 {% endblock title %}
 
 {% block content %}
+<h1>Начало  block content </h1>
     {% for category in categories  %}
         <p>
             {{ category.name }}
@@ -22,4 +23,5 @@ Subscriptions
             </form>
         </p>
     {% endfor %}
+<h1>Конец  block content </h1>
 {% endblock content %}
